@@ -398,6 +398,7 @@ namespace SolenoidControl_01
             this.PeriodButton.TabIndex = 34;
             this.PeriodButton.Text = ".";
             this.PeriodButton.UseVisualStyleBackColor = true;
+            this.PeriodButton.Click += new System.EventHandler(this.PeriodButton_Click);
             // 
             // IncSetButton
             // 
@@ -407,6 +408,7 @@ namespace SolenoidControl_01
             this.IncSetButton.TabIndex = 35;
             this.IncSetButton.Text = "INC SET";
             this.IncSetButton.UseVisualStyleBackColor = true;
+            this.IncSetButton.Click += new System.EventHandler(this.IncSetButton_Click);
             // 
             // AbsSetButton
             // 
@@ -416,6 +418,7 @@ namespace SolenoidControl_01
             this.AbsSetButton.TabIndex = 36;
             this.AbsSetButton.Text = "ABS SET";
             this.AbsSetButton.UseVisualStyleBackColor = true;
+            this.AbsSetButton.Click += new System.EventHandler(this.AbsSetButton_Click);
             // 
             // Num8Button
             // 
@@ -425,6 +428,7 @@ namespace SolenoidControl_01
             this.Num8Button.TabIndex = 37;
             this.Num8Button.Text = "8";
             this.Num8Button.UseVisualStyleBackColor = true;
+            this.Num8Button.Click += new System.EventHandler(this.Num8Button_Click);
             // 
             // Num7Button
             // 
@@ -434,6 +438,7 @@ namespace SolenoidControl_01
             this.Num7Button.TabIndex = 38;
             this.Num7Button.Text = "7";
             this.Num7Button.UseVisualStyleBackColor = true;
+            this.Num7Button.Click += new System.EventHandler(this.Num7Button_Click);
             // 
             // Z2Button
             // 
@@ -473,6 +478,7 @@ namespace SolenoidControl_01
             this.Num1Button.TabIndex = 42;
             this.Num1Button.Text = "1";
             this.Num1Button.UseVisualStyleBackColor = true;
+            this.Num1Button.Click += new System.EventHandler(this.Num1Button_Click);
             // 
             // Num2Button
             // 
@@ -482,6 +488,7 @@ namespace SolenoidControl_01
             this.Num2Button.TabIndex = 43;
             this.Num2Button.Text = "2";
             this.Num2Button.UseVisualStyleBackColor = true;
+            this.Num2Button.Click += new System.EventHandler(this.Num2Button_Click);
             // 
             // Num6Button
             // 
@@ -491,6 +498,7 @@ namespace SolenoidControl_01
             this.Num6Button.TabIndex = 44;
             this.Num6Button.Text = "6";
             this.Num6Button.UseVisualStyleBackColor = true;
+            this.Num6Button.Click += new System.EventHandler(this.Num6Button_Click);
             // 
             // Num4Button
             // 
@@ -500,6 +508,7 @@ namespace SolenoidControl_01
             this.Num4Button.TabIndex = 45;
             this.Num4Button.Text = "4";
             this.Num4Button.UseVisualStyleBackColor = true;
+            this.Num4Button.Click += new System.EventHandler(this.Num4Button_Click);
             // 
             // Num5Button
             // 
@@ -509,6 +518,7 @@ namespace SolenoidControl_01
             this.Num5Button.TabIndex = 46;
             this.Num5Button.Text = "5";
             this.Num5Button.UseVisualStyleBackColor = true;
+            this.Num5Button.Click += new System.EventHandler(this.Num5Button_Click);
             // 
             // Num9Button
             // 
@@ -518,6 +528,7 @@ namespace SolenoidControl_01
             this.Num9Button.TabIndex = 47;
             this.Num9Button.Text = "9";
             this.Num9Button.UseVisualStyleBackColor = true;
+            this.Num9Button.Click += new System.EventHandler(this.Num9Button_Click);
             // 
             // RestoreButton
             // 
@@ -527,6 +538,7 @@ namespace SolenoidControl_01
             this.RestoreButton.TabIndex = 48;
             this.RestoreButton.Text = "RESTORE";
             this.RestoreButton.UseVisualStyleBackColor = true;
+            this.RestoreButton.Click += new System.EventHandler(this.RestoreButton_Click);
             // 
             // EqualsButton
             // 
@@ -536,6 +548,7 @@ namespace SolenoidControl_01
             this.EqualsButton.TabIndex = 49;
             this.EqualsButton.Text = "=";
             this.EqualsButton.UseVisualStyleBackColor = true;
+            this.EqualsButton.Click += new System.EventHandler(this.EqualsButton_Click);
             // 
             // Num3Button
             // 
@@ -545,6 +558,7 @@ namespace SolenoidControl_01
             this.Num3Button.TabIndex = 50;
             this.Num3Button.Text = "3";
             this.Num3Button.UseVisualStyleBackColor = true;
+            this.Num3Button.Click += new System.EventHandler(this.Num3Button_Click);
             // 
             // Num0Button
             // 
@@ -554,6 +568,7 @@ namespace SolenoidControl_01
             this.Num0Button.TabIndex = 51;
             this.Num0Button.Text = "0";
             this.Num0Button.UseVisualStyleBackColor = true;
+            this.Num0Button.Click += new System.EventHandler(this.Num0Button_Click);
             // 
             // PlusMinusButton
             // 
@@ -563,6 +578,7 @@ namespace SolenoidControl_01
             this.PlusMinusButton.TabIndex = 52;
             this.PlusMinusButton.Text = "+/-";
             this.PlusMinusButton.UseVisualStyleBackColor = true;
+            this.PlusMinusButton.Click += new System.EventHandler(this.PlusMinusButton_Click);
             // 
             // DownButton
             // 
@@ -572,6 +588,7 @@ namespace SolenoidControl_01
             this.DownButton.TabIndex = 53;
             this.DownButton.Text = "v";
             this.DownButton.UseVisualStyleBackColor = true;
+            this.DownButton.Click += new System.EventHandler(this.DownButton_Click);
             // 
             // UpButton
             // 
@@ -581,6 +598,7 @@ namespace SolenoidControl_01
             this.UpButton.TabIndex = 55;
             this.UpButton.Text = "^";
             this.UpButton.UseVisualStyleBackColor = true;
+            this.UpButton.Click += new System.EventHandler(this.UpButton_Click);
             // 
             // LeftButton
             // 
@@ -590,6 +608,7 @@ namespace SolenoidControl_01
             this.LeftButton.TabIndex = 56;
             this.LeftButton.Text = "<";
             this.LeftButton.UseVisualStyleBackColor = true;
+            this.LeftButton.Click += new System.EventHandler(this.LeftButton_Click);
             // 
             // CycleLabel
             // 
@@ -626,6 +645,7 @@ namespace SolenoidControl_01
             this.RightButton.TabIndex = 60;
             this.RightButton.Text = ">";
             this.RightButton.UseVisualStyleBackColor = true;
+            this.RightButton.Click += new System.EventHandler(this.RightButton_Click);
             // 
             // Form1
             // 

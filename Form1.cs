@@ -14,12 +14,11 @@ namespace SolenoidControl_01
 {
     public partial class Form1 : Form
     {
-        String message = "This is currently working";
+        String message;
         int CHOSENBAUD;
         String CHOSENPORT;
         SerialPort COMPORT = new SerialPort();
         String text = "";
-        bool showMachineButtons = false;
 
 
 
@@ -29,6 +28,8 @@ namespace SolenoidControl_01
             COMPORT_Textbox.Text = "COM4";
             BAUDRATE_Textbox.Text = "115200";
             //TestButton.Enabled = false;
+            DisconnectButton.Enabled = false;
+
         }
 
         private void WriteToSysLog(String str)
@@ -46,6 +47,8 @@ namespace SolenoidControl_01
             {
                 COMPORT = new SerialPort(CHOSENPORT, CHOSENBAUD);
                 COMPORT.Open();
+                CONNECT_Button.Enabled = false;
+                DisconnectButton.Enabled = true;
                 text = "Successful connection";
                 WriteToSysLog(text);
             }
@@ -64,6 +67,8 @@ namespace SolenoidControl_01
                 if (COMPORT.IsOpen)
                 {
                     COMPORT.Close();
+                    DisconnectButton.Enabled = false;
+                    CONNECT_Button.Enabled = true;
                     text = "Successful disconnect";
                     WriteToSysLog(text);
 
@@ -85,7 +90,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("OffButton Clicked");
+                message = "Off Button Clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -99,7 +105,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("RevButton clicked");
+                message = "Rev Button Clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -113,7 +120,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("FwdButton clicked");
+                message = "FWD Button Clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -127,7 +135,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("Fourth Button clicked");
+                message = "Fourth Button Clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -141,7 +150,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("X Button clicked");
+                message = "X Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -155,7 +165,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("EHW Button clicked");
+                message = "EHW Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -169,7 +180,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("Y Button clicked");
+                message = "Y Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -183,7 +195,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("Z Button clicked");
+                message = "Y Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -197,7 +210,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("Go Button clicked");
+                message = "Go Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -211,7 +225,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("Stop Button clicked");
+                message = "Stop Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -225,7 +240,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("Spindle Override Button clicked");
+                message = "Spindle Override Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -239,7 +255,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("Feed Override Button clicked");
+                message = "Feed Override Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -253,7 +270,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("Measure1 Button clicked");
+                message = "Measure 1 Button";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -267,7 +285,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("Measure2 Button clicked");
+                message = "Measure2 Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -281,7 +300,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("Measure 3 Button clicked");
+                message = "Measure 3 Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -295,7 +315,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("Fast Button clicked");
+                message = "Fast Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -309,7 +330,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("Coolant Button clicked");
+                message = "Coolant Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -323,7 +345,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("Air Button clicked");
+                message = "Air Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -337,7 +360,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("Wash Button clicked");
+                message = "Wash Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -351,7 +375,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("Door Lock Button clicked");
+                message = "Door Lock Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -365,7 +390,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("FWD 2 Button clicked");
+                message = "FWD2 Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -379,7 +405,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("REV 2 Button clicked");
+                message = "REV2 Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -393,7 +420,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("FWD3 Button clicked");
+                message = "FWD3 Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -407,7 +435,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("REV3 Button clicked");
+                message = "REV3 Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -421,7 +450,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("X2 Button clicked");
+                message = "X2 Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -435,7 +465,8 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("Y2 Button clicked");
+                message = "Y2 Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
@@ -449,7 +480,308 @@ namespace SolenoidControl_01
         {
             try
             {
-                COMPORT.Write("Z2 Button clicked");
+                message = "Z2 Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void IncSetButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Inc Set Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void AbsSetButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Abs Set Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void Num7Button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Num7 Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void Num8Button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Num8 Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void Num9Button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Num 9 Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void Num4Button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "um 4 Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void Num5Button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Num 5 Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void Num6Button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Num 6 Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void Num1Button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Num1 Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void Num2Button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Num2 Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void Num3Button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Num3 Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void PlusMinusButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Plus Minus Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void Num0Button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Num0 Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void PeriodButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Period Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void EqualsButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Equals Button Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void RestoreButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Restore Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void UpButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Up Button Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void LeftButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Left Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void RightButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Right Button clicked";
+                COMPORT.Write(message);
+                WriteToSysLog("Transmitted: " + message);
+            }
+            catch
+            {
+                text = "Message did not transmit";
+                WriteToSysLog(text);
+            }
+        }
+
+        private void DownButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = "Down Button clicked";
+                COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
             catch
