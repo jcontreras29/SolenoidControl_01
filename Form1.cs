@@ -105,7 +105,7 @@ namespace SolenoidControl_01
         {
             try
             {
-                message = "Rev Button Clicked";
+                message = "$5;";
                 COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
@@ -120,7 +120,7 @@ namespace SolenoidControl_01
         {
             try
             {
-                message = "FWD Button Clicked";
+                message = "FWD Button Clicked" + Environment.NewLine; 
                 COMPORT.Write(message);
                 WriteToSysLog("Transmitted: " + message);
             }
@@ -790,5 +790,6 @@ namespace SolenoidControl_01
                 WriteToSysLog(text);
             }
         }
+
     }
 }
